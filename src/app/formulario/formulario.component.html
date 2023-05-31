@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card mx-auto">
+          <div class="card-body">
+            <h5 class="card-title">Formulario</h5>
+            <form (ngSubmit)="onSubmit()" #form="ngForm">
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" class="form-control" [(ngModel)]="nombre" name="nombre" required #nombreInput="ngModel">
+              </div>
+      
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required #emailInput="ngModel">
+              </div>
+      
+              <div class="text-center">
+                <button type="button" class="btn btn-primary" (click)="showConfirmation()" [disabled]="!form.valid">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
